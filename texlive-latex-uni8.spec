@@ -1,6 +1,6 @@
 Name:		texlive-latex-uni8
 Version:	49729
-Release:	1
+Release:	2
 Summary:	Universal inputenc, fontenc, and babel for pdfLaTeX and LuaLaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/latex-uni8
