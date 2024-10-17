@@ -3,7 +3,7 @@ Version:	49729
 Release:	2
 Summary:	Universal inputenc, fontenc, and babel for pdfLaTeX and LuaLaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/latex-uni8
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/latex-uni8
 License:	lppl
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latex-uni8.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latex-uni8.doc.r%{version}.tar.xz
