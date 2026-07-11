@@ -1,41 +1,25 @@
-Name:		texlive-latex-uni8
-Version:	49729
-Release:	2
+%global tl_name latex-uni8
+%global tl_revision 49729
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.03
+Release:	%{tl_revision}.1
 Summary:	Universal inputenc, fontenc, and babel for pdfLaTeX and LuaLaTeX
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/latex-uni8
 License:	lppl
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latex-uni8.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latex-uni8.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/latex-uni8.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/latex-uni8.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides a LaTeX style file which makes it easy to
-use input encoding (UTF-8 by default, can be changed),
-fontspec.sty (optional), font encoding (T1 if fontspec.sty is
-not used), babel (English language by default), hyphenation,
-underline (with soul.sty), default text and math fonts
-(Computer Modern or Times), and paper sizes correctly with both
-pdfLaTeX and LuaLaTeX.
+This package provides a LaTeX style file which makes it easy to use
+input encoding (UTF-8 by default, can be changed), fontspec.sty
+(optional), font encoding (T1 if fontspec.sty is not used), babel
+(English language by default), hyphenation, underline (with soul.sty),
+default text and math fonts (Computer Modern or Times), and paper sizes
+correctly with both pdfLaTeX and LuaLaTeX.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/latex-uni8
-%doc %{_texmfdistdir}/doc/latex/latex-uni8
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
